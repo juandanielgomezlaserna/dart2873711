@@ -6,7 +6,7 @@ void main(){
   if(edad >=18){
     print("Usted es mayor de edad");
   }
-  print("******************")
+  print("******************");
   //CONDICIONAL DOBLE
   bool esMayor = true; //Definición y Asignación
   if(esMayor == true){//SI
@@ -20,5 +20,17 @@ void main(){
     print("Usted aprobó el exámen");
   } else{
     print("Usted no aprobó el exámen");
+  }
+
+  //CONDICIONAL ANIDADO
+  int estrato = 2;
+  if (estrato == 1){
+    print("Usted es estrato 1");
+    print("Se le subsidia ek 10% de la factura");
+  }else if(estrato == 2){
+    print("Usted es estrato 2");
+    print("Se le subsidia el 5% de la factura");
+  }else if(estrato == 3){
+
   }
   }
