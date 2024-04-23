@@ -1,4 +1,6 @@
-void main(){
+import 'dart:convert';
+
+void main(){//abre método main
   print("******************");
   //CONDICIONAL SIMPLE
   int edad;
@@ -14,6 +16,7 @@ void main(){
   }else{//SINO
     print("Es menor de edad");
   }
+  print("******************");
   print("CONDICIONAL DOBLE #2");
   double nota = 4.5;
   if (nota >= 3){
@@ -49,5 +52,34 @@ void main(){
   //CONDICIONAL MULTIPLE
   print("**************");
   print("CONDICIONAL MÚLTIPLE");
-  int trimestre = 4;
+  int trimestre = 8;
+  switch(trimestre){
+    case 1:
+      print("TRIMESTRE 1");
+      print("Fase de Requerimientos");
+      break;
+    case 2:
+      print("TRIMESTRE 2");
+      print("Fase de análisis");
+      break;
+    case 3:
+      print("TRIMESTRE 3");
+      print("Fase de Diseño");
+      break;
+    case 4:
+      print("TRIMESTRE 4");
+      print("Fase de Implementación");
+      break;
+    case 5:
+     print("TRIMESTRE 5");
+     print("Fase de Pruebas");
+     break;
+    case 6:
+      print("TRIMESTRE 6");
+      print("Fase de Mantenimiento");
+      break;
+    default:
+      print("El trimestre es incorrecto");
+
   }
+  }// cierra método main
