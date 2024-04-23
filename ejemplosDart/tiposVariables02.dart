@@ -24,6 +24,6 @@ void main(){
   esCasado = false;
   bool tieneHijos = true;
   print("Es casado: $esCasado");
-  print("Tiene hijos: $tieneHijos")
+  print("Tiene hijos: $tieneHijos");
 
 }
