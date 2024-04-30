@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 void main(){
   //JUAN DANIEL GÓMEZ - CONDICIONAL SIMPLE 6
@@ -12,15 +13,15 @@ void main(){
   double precio, descuento;
   int numero;
   //ENTRADA DE DATOS
-  print("Ingrese el número que sacó");
-  numero = int.parse(stdin.readLineSync()!);
   print("Ingrese el precio que tiene que pagar sin el descuento");
   precio = double.parse(stdin.readLineSync()!);
+  numero = Random().nextInt(100);
   //PROCESO
   descuento = precio*0.15;
   if(numero >= 74){
     descuento = precio*0.2;
   }
   //SALIDA
+  print("El número al azar es: $numero");
   print("Se le descuenta una cantidad de: \$$descuento");
 }
