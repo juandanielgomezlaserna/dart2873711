@@ -18,9 +18,10 @@ void main(List<String> args) {
   hectáreas a fumigar.
   Se debe imprimir el nombre del granjero y la cuenta total.
   */
+  //DECLARACIÓN DE VARIABLES
   String? nombre;
-  int tipo, hectarea;
-  double subtotal, descuento, total;
+  int tipo, hectarea, precio_hectarea;
+  double subtotal, descuento1, descuento2, total;
   //ENTRADA DE DATOS
   print("Ingrese su nombre");
   nombre = stdin.readLineSync();
@@ -28,4 +29,35 @@ void main(List<String> args) {
   tipo = int.parse(stdin.readLineSync()!);
   print("Ingrese el número de hectáreas");
   hectarea = int.parse(stdin.readLineSync()!);
+  //PROCESO
+  descuento1 = 0;
+  descuento2 = 0;
+  switch (tipo){
+    case 1:
+      precio_hectarea = 50000;
+      break;
+    case 2:
+      precio_hectarea = 70000;
+      break;
+    case 3:
+      precio_hectarea = 80000;
+      break;
+    case 4:
+      precio_hectarea = 19000;
+      break;
+    default:
+      print("No es un tipo válido, lo tomaremos como tipo 1");
+      precio_hectarea = 50000;
+      break;
+  }
+  subtotal = precio_hectarea.toDouble()*hectarea;
+  if(hectarea > 100){
+    descuento1 = subtotal*0.05;
+  }
+  if(subtotal > 1000000){
+    descuento2 = subtotal*0.1;
+  }
+  total = subtotal - descuento1 - descuento2;
+  //SALIDA
+  print("El precio de todo el area fumigado para el cliente $nombre es de $total");
 }
