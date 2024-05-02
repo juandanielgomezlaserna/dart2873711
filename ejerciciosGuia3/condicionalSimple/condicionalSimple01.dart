@@ -26,5 +26,5 @@ void main(List<String> args){
     print("Se obtuvo un incentivo de: $incentivo");
   }
   //SALIDA ALGORITMO
-  print("El sueldo neto es: $sueldo");
+  print("El sueldo neto de $nombre es: $sueldo");
 }
