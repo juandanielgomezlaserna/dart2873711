@@ -51,10 +51,11 @@ void main(List<String> args) {
       break;
   }
   subtotal = precio_hectarea.toDouble()*hectarea;
-  if(hectarea > 100){
+  if((hectarea > 100)&(subtotal > 1000000)){
     descuento1 = subtotal*0.05;
-  }
-  if(subtotal > 1000000){
+  }else if(hectarea > 100){
+    descuento1 = subtotal*0.05;
+  }else if(subtotal > 1000000){
     descuento2 = subtotal*0.1;
   }
   total = subtotal - descuento1 - descuento2;
