@@ -14,6 +14,18 @@ void main(List<String> args) {
   print("Ingrese la cantidad de obreros");
   cant_obreros = int.parse(stdin.readLineSync()!);
   while(cant_obreros != contador){
-    
+    print("Ingrese la cantidad de horas que trabajó");
+    horas = int.parse(stdin.readLineSync()!);
+    horas_extra = horas - 40;
+    if(horas_extra>0){
+      precio_hora = 40*20;
+      precio_extra = horas_extra*25;
+      salario = precio_hora + precio_extra;
+    }else{
+      precio_hora = horas*20;
+      salario = precio_hora;
+    }
+    print("El salario del obrero es: $salario");
+    contador++;
   }
 }
