@@ -11,17 +11,14 @@ void main(List<String> args) {
   */
   //DECLARACIÓN DE VARIABLES
   String? articulo;
-  String nombre;
   int cantArticulo;
   double precio, totalCompra = 0;
   //ENTRADA, PROCESO Y SALIDA
   do{
-    print("Ingrese el nombre del artículo");
+    print("Ingrese el nombre del artículo o escriba salir");
     articulo = stdin.readLineSync();
-    nombre = "$articulo";
-    nombre = nombre.toLowerCase();
-    if(articulo != "salir"){
-      print("Ingrese el precio unitario del artículo $nombre");
+    if(articulo!.toLowerCase() != "salir"){
+      print("Ingrese el precio unitario del artículo $articulo");
       precio = double.parse(stdin.readLineSync()!);
       print("Ingrese la cantidad de articulos");
       cantArticulo = int.parse(stdin.readLineSync()!);
@@ -29,5 +26,5 @@ void main(List<String> args) {
     }else{
       print("El total de la compra es: $totalCompra");
     }
-  }while(articulo != "salir");
+  }while(articulo!.toLowerCase() != "salir");
 }

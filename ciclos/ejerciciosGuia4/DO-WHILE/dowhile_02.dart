@@ -7,15 +7,16 @@ void main(List<String> args) {
   introduzca  un  número  entero  positivo  e  invierta  los  dígitos  del  número.  Mostrar  el  número invertido.
   */
   //DECLARACIÓN DE VARIABLES
-  int num;
-  //ENTRADA, PROCESO Y SALIDA
+  int numInicial;
+  int nuevoNumero, modulo, division;
+  //ENTRADA, PROCESO, SALIDA
+  print("Ingrese el número");
+  numInicial = int.parse(stdin.readLineSync()!);
+  nuevoNumero = numInicial;
   do {
-    print("Ingrese el número o (0) para salir");
-    num = int.parse(stdin.readLineSync()!);
-    if(num != 0){
-      print("El número invertido es: ${num*-1}");
-    }else{
-      print("fin del programa");
-    }
-  } while (num != 0);
+    modulo = nuevoNumero % 10;
+    division = nuevoNumero~/10;
+    stdout.write(modulo);
+    nuevoNumero = division;
+  } while (division != 0);
 }

@@ -10,12 +10,10 @@ void main(List<String> args) {
   //DECLARACIÓN DE VARIABLES
   int opinion, contra = 0, aFavor = 0, nulo = 0, total = 0;
   String? seguir;
-  String seguir1;
   double por_contra, por_favor, por_nulo;
   //ENTRADA, PROCESO
   do {
-    print(
-        "Ingrese 1 para estar a favor, 2 para estar en contra y 3 para abstenerse de opinar");
+    print("Ingrese 1 para estar a favor, 2 para estar en contra y 3 para abstenerse de opinar");
     opinion = int.parse(stdin.readLineSync()!);
     if (opinion == 1) {
       aFavor++;
@@ -33,16 +31,15 @@ void main(List<String> args) {
       print("¿Desea continuar ingresando datos?");
       print("Sí[y] no[n]");
       seguir = stdin.readLineSync();
-      seguir1 = "$seguir";
-      seguir1 = seguir1.toLowerCase();
-      if(seguir1 != "y" && seguir1 != "n"){
+      seguir = seguir!.toLowerCase();
+      if(seguir != "y" && seguir != "n"){
         print("opción incorrectaa");
       }
-    } while (seguir1 != "y" && seguir1 != "n");
-  } while (seguir1 != "n");
-  por_contra = contra/total*100;
-  por_favor = aFavor/total*100;
-  por_nulo = nulo/total*100;
+    } while (seguir != "y" && seguir != "n");
+  } while (seguir != "n");
+  por_contra = contra*100/total;
+  por_favor = aFavor*100/total;
+  por_nulo = nulo*100/total;
   //SALIDA
   print("A favor: $por_favor%");
   print("En contra: $por_contra%");
