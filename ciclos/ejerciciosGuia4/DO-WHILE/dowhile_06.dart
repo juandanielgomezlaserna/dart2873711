@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 
 void main(List<String> args) {
@@ -25,7 +24,7 @@ void main(List<String> args) {
       sumaCalific += calificacion;
     }
     promedio = sumaCalific / 5;
-    if(promedio < mayorPromedio){
+    if(promedio > mayorPromedio){
       mayorPromedio = promedio;
       numControl = contador + 1;
     }

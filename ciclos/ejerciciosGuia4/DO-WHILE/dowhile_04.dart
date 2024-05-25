@@ -10,27 +10,46 @@ void main(List<String> args) {
   */
   //DECLARACIÓN DE VARIABLES
   double por_primaria, por_secundaria, por_tecnico, por_profesional, por_posgrado;
-  int continuar;
+  int continuar, cont_primaria = 0, cont_secundaria = 0, cont_tecnico = 0, cont_profesional = 0, cont_posgrado = 0, cantidad_personas = 0;
+  String? estudios;
+  //ENTRADA DE DATOS, PROCESO
   do {
-    print("Ingrese el porcentaje de estudios que logró en primaria");
-    por_primaria = double.parse(stdin.readLineSync()!);
-    print("Ingrese el porcentaje de estudios que logró en secundaria");
-    por_secundaria = double.parse(stdin.readLineSync()!);
-    print("Ingrese el porcentaje de estudios que logró en su carrera tecnica");
-    por_tecnico = double.parse(stdin.readLineSync()!);
-    print("Ingrese el porcentaje de estudios que logró en sus estudios profesionales");
-    por_profesional = double.parse(stdin.readLineSync()!);
-    print("Ingrese el porcentaje de estudios que logró en sus estudios pos grado");
-    por_posgrado = double.parse(stdin.readLineSync()!);
-    //MOSTRAR LOS RESULTADOS
-    print("El porcentaje que hizo en primaria fue: $por_primaria");
-    print("El porcentaje que hizo en secundaria fue: $por_secundaria");
-    print("El porcentaje que hizo en tecnico fue: $por_tecnico");
-    print("El porcentaje que hizo en profesional fue: $por_profesional");
-    print("El porcentaje que hizo en posgrado fue: $por_posgrado");
-    print("***********************************");
-    print("¿Desea seguir ingresando datos? (1)para salir, (0)para continuar");
+    print("Ingrese el nivel de estudios que tiene");
+    estudios = (stdin.readLineSync())!.toLowerCase();
+    if(estudios == "primaria"){
+      cont_primaria ++;
+      cantidad_personas++;
+    }else if(estudios == "secundaria"){
+      cont_secundaria ++;
+      cantidad_personas++;
+    }else if(estudios == "tecnico"){
+      cont_tecnico++;
+      cantidad_personas++;
+    }else if(estudios == "profesional"){
+      cont_profesional++;
+      cantidad_personas++;
+    }else if(estudios == "posgrado"){
+      cont_profesional++;
+      cantidad_personas++;
+    }else{
+      print("No es un estudio válido");
+    }
+    print("Desea continuar? (0) continuar (1) seguir");
     continuar = int.parse(stdin.readLineSync()!);
-
+    while(continuar != 1 && continuar != 0){
+      print("Opción incorrecta, ingrese nuevamente la opción");
+      continuar = int.parse(stdin.readLineSync()!);
+    }
   } while (continuar != 1);
+  por_primaria = cont_primaria*100/cantidad_personas;
+  por_secundaria = cont_secundaria*100/cantidad_personas;
+  por_tecnico = cont_tecnico*100/cantidad_personas;
+  por_profesional = cont_profesional*100/cantidad_personas;
+  por_posgrado = cont_posgrado*100/cantidad_personas;
+  //SALIDA
+  print("Primaria: $por_primaria%");
+  print("Secundaria: $por_secundaria%");
+  print("Tecnico: $por_tecnico%");
+  print("Profesional: $por_profesional%");
+  print("Posgrado: $por_posgrado%");
 }
