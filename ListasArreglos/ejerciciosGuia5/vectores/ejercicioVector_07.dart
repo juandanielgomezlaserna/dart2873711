@@ -20,7 +20,7 @@ void main(List<String> args) {
       nuevaFrase = nuevaFrase! + frase[i]; 
     }
   }
-  for (var i = nuevaFrase!.length - 1; i <= 0 ; i++) {
+  for (var i = nuevaFrase!.length - 1; i >= 0 ; i--) {
     fraseInvertida = fraseInvertida! + nuevaFrase[i];
   }
   if(nuevaFrase == fraseInvertida){
